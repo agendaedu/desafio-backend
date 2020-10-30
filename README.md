@@ -40,7 +40,7 @@ Esses requisitos não são obrigatórios, mas serão levados em consideração c
 - Boas práticas: Avalia se o projeto segue boas práticas de desenvolvimento, incluindo segurança e otimização;
 - Criatividade: Avalia o quanto você "pensou fora da caixa", levando em conta soluções criativas para os problemas levantados;
 
-O desafio deve ser entregue nos passando a URL de seu repositório. Fique a vontade caso queira incrementar o projeto com outras feautures não listadas aqui, iremos levar em consideração também!
+O desafio deve ser entregue nos passando a URL de seu repositório. Fique a vontade caso queira incrementar o projeto com outras features não listadas aqui, iremos levar em consideração também!
 
 Qualquer dúvida em relação ao desafio, responderemos por e-mail.
 
