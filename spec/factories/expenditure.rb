@@ -8,3 +8,7 @@ FactoryBot.define do
     descricao { Faker::Fantasy::Tolkien.poem }
   end
 end
+
+def expenditure_with_deputy
+  FactoryBot.create(:expenditure, deputy: FactoryBot.create(:deputy))
+end
