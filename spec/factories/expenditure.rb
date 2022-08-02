@@ -9,5 +9,5 @@ FactoryBot.define do
 end
 
 def expenditure_with_deputy
-  FactoryBot.create(:expenditure, deputy: FactoryBot.create(:deputy))
+  FactoryBot.create(:expenditure, deputy: FactoryBot.create(:deputy), supplier: FactoryBot.create(:supplier))
 end

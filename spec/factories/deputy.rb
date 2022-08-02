@@ -11,6 +11,8 @@ end
 
 def deputy_with_expenditures(expenditures_count: 5)
   FactoryBot.create(:deputy) do |deputy|
-    FactoryBot.create_list(:expenditure, expenditures_count, deputy: deputy)
+    FactoryBot.create_list(:expenditure, expenditures_count,
+                           deputy: deputy,
+                           supplier: FactoryBot.create(:supplier))
   end
 end

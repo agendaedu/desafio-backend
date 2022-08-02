@@ -4,4 +4,5 @@ class Expenditure < ApplicationRecord
 
   # Relationship
   belongs_to :deputy
+  belongs_to :supplier
 end
