@@ -29,9 +29,9 @@ RSpec.describe Deputy, type: :model do
         expect(second_deputy).to_not be_valid
       end
 
-      it "ideCadastro duplicate invald" do
+      it "id_cadastro duplicate invald" do
         second_deputy = duplicate.first
-        second_deputy.ideCadastro = duplicate.last.ideCadastro
+        second_deputy.id_cadastro = duplicate.last.id_cadastro
         expect(second_deputy).to_not be_valid
       end
     end
@@ -42,18 +42,18 @@ RSpec.describe Deputy, type: :model do
         expect(deputy).to_not be_valid
       end
 
-      it "when no has txNomeParlamentar" do
-        deputy.txNomeParlamentar = nil
+      it "when no has tx_nome_parlamentar" do
+        deputy.tx_nome_parlamentar = nil
         expect(deputy).to_not be_valid
       end
 
-      it "when no has sgUF" do
-        deputy.sgUF = nil
+      it "when no has sg_uf" do
+        deputy.sg_uf = nil
         expect(deputy).to_not be_valid
       end
 
-      it "when no has ideCadastro" do
-        deputy.ideCadastro = nil
+      it "when no has id_cadastro" do
+        deputy.id_cadastro = nil
         expect(deputy).to_not be_valid
       end
     end

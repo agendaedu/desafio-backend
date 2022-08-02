@@ -15,13 +15,7 @@ RSpec.describe Expenditure, type: :model do
       end
     end
 
-
     context "presence" do
-      it "when no has cnpj_cpf" do
-        expentiture_with_deputy.cnpj_cpf = nil
-        expect(expentiture_with_deputy).to_not be_valid
-      end
-
       it "when no has txt_fornecedor" do
         expentiture_with_deputy.txt_fornecedor = nil
         expect(expentiture_with_deputy).to_not be_valid
