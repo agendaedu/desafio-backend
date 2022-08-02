@@ -3,4 +3,7 @@ class Deputy < ApplicationRecord
   validates :sgUF, presence: true
   validates :ideCadastro, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
+
+  # Relationship
+  has_many :expenditures
 end
