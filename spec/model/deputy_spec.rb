@@ -5,6 +5,17 @@ RSpec.describe Deputy, type: :model do
   describe "validations" do
     let(:deputy) { build(:deputy) }
     
+    context "relationship" do
+      let(:with_expenditures) { deputy_with_expenditures(expenditures_count: 5) }
+      it '5 expenditures' do
+        expect(with_expenditures.expenditures.count).to eq(5)
+      end
+      
+      it 'without expenditures' do
+        expect(deputy.expenditures).to eq([])
+      end
+    end
+
     context "uniqueless" do
       let(:duplicate) { create_list(:deputy, 2) }
 

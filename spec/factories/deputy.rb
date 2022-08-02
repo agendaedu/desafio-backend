@@ -8,3 +8,9 @@ FactoryBot.define do
     cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
   end
 end
+
+def deputy_with_expenditures(expenditures_count: 5)
+  FactoryBot.create(:deputy) do |deputy|
+    FactoryBot.create_list(:expenditure, expenditures_count, deputy: deputy)
+  end
+end
