@@ -45,7 +45,7 @@ class Base
     {
       tx_nome_parlamentar: field[0],
       sg_uf: field[5],
-      id_cadastro: field[28],
+      id_cadastro: field[2],
       cpf: field[1]
     }
   end
