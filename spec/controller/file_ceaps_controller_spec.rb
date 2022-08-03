@@ -15,5 +15,6 @@ RSpec.describe FileCeapsController, type: :controller do
 
     it { expect(FileCeap.count).to eq(1) }
     it { expect(FileCeap.last.title).to eq(title) }
+    it { expect(Expenditure.count).to eq(10) }
   end
 end
