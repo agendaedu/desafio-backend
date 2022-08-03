@@ -9,7 +9,7 @@ class FileCeapsController < ApplicationController
 
   def process_file
     byebug
-    # ::Process::File.run(params[:file])
+    FileCeapsJob.perform_later params[:file].to_json
     head :ok
   end
 end
