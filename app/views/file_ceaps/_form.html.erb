@@ -1,4 +1,12 @@
-asdadadas
-<%#= form_for @file_ceap do |f| %>
-  <%#= f.submit %>
-<%# end %>
+<%= form_with model: @file_ceap do |form| %>
+  <div class="mb-3">
+    <%= form.text_field :title, class: "form-control", placeholder:"Titulo" %>
+  </div>
+  <div class="mb-3">
+    <%= form.file_field :avatar, class: "form-control", accept: '.csv' %>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  </div>
+<% end %>
