@@ -21,8 +21,7 @@ class FileCeapsController < ApplicationController
     @file_ceap = FileCeap.new(params_file_ceap)
     respond_to do |format|
       if @file_ceap.save
-        binding.remote_pry
-        Process::Creator.run(@file_ceap.avatar)
+        Process::Creator.run(@file_ceap)
         # flash[:notice] = t('.digisacs.controllers.create.success!')
         format.html  { redirect_to file_ceaps_url }
       else
