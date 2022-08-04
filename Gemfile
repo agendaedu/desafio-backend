@@ -31,6 +31,7 @@ gem 'sidekiq'
 gem 'ransack'
 gem 'csv'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'simplecov', require: false, group: :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -56,7 +57,6 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'database_cleaner-active_record',  '2.0.1'
-  gem 'simplecov', '0.21.2'
   gem "rails-controller-testing"
 end
 
