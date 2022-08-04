@@ -5,21 +5,36 @@ include ActionDispatch::TestProcess::FixtureFile
 RSpec.describe FileCeapsController, type: :controller do
 
   describe "POST #create" do
-    let(:title) { "Ano-2021.csv" }
+    context "file_ceap valid" do
+      let(:title) { "Ano-2021.csv" }
       before do
         post :create, params: {
           file_ceap: {
           title: title,
-          avatar: fixture_file_upload("spec/support/assets/files/Ano-2021.csv")
+          avatar: fixture_file_upload("spec/support/assets/files/#{title}")
         }}, format: :html
       end
 
-    it { expect(FileCeap.count).to eq(1) }
-    it { expect(FileCeap.last.title).to eq(title) }
-    it { expect(Expenditure.count).to eq(10) }
-    it { expect(assigns[:file_ceap].processed).to eq(true) }
-    it { expect(response.content_type).to eq("text/html; charset=utf-8")}
-    it { expect(response).to redirect_to(action: :index)}
+      it { expect(FileCeap.count).to eq(1) }
+      it { expect(FileCeap.last.title).to eq(title) }
+      it { expect(Expenditure.count).to eq(10) }
+      it { expect(assigns[:file_ceap].processed).to eq(true) }
+      it { expect(response.content_type).to eq("text/html; charset=utf-8")}
+      it { expect(response).to redirect_to(action: :index)}
+    end
+
+    context "file_ceap invalid" do
+      let(:title) { "Ano-2021-invalid.csv" }
+      before do
+        post :create, params: {
+          file_ceap: {
+          title: title,
+          avatar: fixture_file_upload("spec/support/assets/files/#{title}")
+        }}, format: :html
+      end
+      it { expect(Expenditure.count).to eq(0) }
+    end
+
   end
 
   describe "GET #index" do
