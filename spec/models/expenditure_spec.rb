@@ -5,6 +5,13 @@ RSpec.describe Expenditure, type: :model do
   describe "validations" do
     let(:expenditure) { build(:expenditure) }
     let(:expentiture_with_deputy) { expenditure_with_deputy }
+    context "callback" do
+      it "update maior_despesa when expenditure is create" do
+        value = expenditure_with_deputy
+        expect(Deputy.last.maior_despesa).to eq(value.vlr_liquido)
+      end
+    end
+
     context "relationship" do
       it 'belongs deputy' do
         expect(expentiture_with_deputy.deputy).to be_valid
