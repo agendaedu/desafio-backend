@@ -14,11 +14,12 @@ RSpec.describe FileCeapsController, type: :controller do
         }}, format: :html
       end
 
-      it { expect(FileCeap.count).to eq(1) }
-      it { expect(FileCeap.last.title).to eq(title) }
-      it { expect(Expenditure.count).to eq(10) }
-      it { expect(response.content_type).to eq("text/html; charset=utf-8")}
-      it { expect(response).to redirect_to(action: :index)}
+    it { expect(FileCeap.count).to eq(1) }
+    it { expect(FileCeap.last.title).to eq(title) }
+    it { expect(Expenditure.count).to eq(10) }
+    it { expect(assigns[:file_ceap].processed).to eq(true) }
+    it { expect(response.content_type).to eq("text/html; charset=utf-8")}
+    it { expect(response).to redirect_to(action: :index)}
   end
 
   describe "GET #index" do

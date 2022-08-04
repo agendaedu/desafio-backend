@@ -22,6 +22,7 @@ module Process
         supplier = find_or_create_supplier(record[1][:supplier])
         create_expenditure(record[1][:expenditure], deputy, supplier)
       end
+      file.update(processed: true)
     end
 
     def find_or_create_deputy(record)
