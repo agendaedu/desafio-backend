@@ -1,4 +1,5 @@
 class FileCeapsController < ApplicationController
+
   def index
     @q = FileCeap.ransack(params[:q])
     @file_ceaps = @q.result(distinct: true)
@@ -9,6 +10,11 @@ class FileCeapsController < ApplicationController
   end
 
   def new
+    @file_ceap = FileCeap.new
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def process_file
