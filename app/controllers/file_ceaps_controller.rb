@@ -1,6 +1,7 @@
 class FileCeapsController < ApplicationController
   def index
-    @file_ceaps = FileCeap.all
+    @q = FileCeap.ransack(params[:q])
+    @file_ceaps = @q.result(distinct: true)
 
     respond_to do |format|
       format.html
