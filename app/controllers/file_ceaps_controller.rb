@@ -21,22 +21,14 @@ class FileCeapsController < ApplicationController
     @file_ceap = FileCeap.new(params_file_ceap)
     respond_to do |format|
       if @file_ceap.save
+        binding.remote_pry
+        Process::Creator.run(@file_ceap.avatar)
         # flash[:notice] = t('.digisacs.controllers.create.success!')
         format.html  { redirect_to file_ceaps_url }
       else
         flash[:error] = @file_ceap.errors.full_messages
         format.js
       end
-    end
-  end
-
-  def process_file
-    resp = Imports::Creator.run(params[:file])
-    if resp.is_a?(FileCeap)
-      Process::Creator.run(resp)
-      redirect_to action: :index
-    else
-      render "new"
     end
   end
 
