@@ -12,7 +12,7 @@
     <% @deputes.each do |deputy| %>
       <tr>
         <th scope="row"><%= deputy.id %></th>
-        <td><%= deputy.tx_nome_parlamentar%></td>
+        <td><%= link_to deputy.tx_nome_parlamentar, home_path(deputy) %></td>
         <td><%= deputy.id_cadastro %></td>
         <td><%= deputy.sg_uf %></td>
         <td><%= deputy.maior_despesa %></td>
