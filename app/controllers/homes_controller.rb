@@ -2,7 +2,7 @@ class HomesController < ApplicationController
   before_action :search_depute, only: [:show]
   def index
     @q = Deputy.ransack(params[:q])
-    @deputes = @q.result.includes(expenditures: :supplier)
+    @pagy, @deputes = pagy(@q.result.includes(expenditures: :supplier).order(maior_despesa: :desc))
 
     respond_to do |format|
       format.html
@@ -10,7 +10,7 @@ class HomesController < ApplicationController
   end
 
   def show 
-    @expenditures = @depute.expenditures
+    @pagy, @expenditures = pagy(@depute.expenditures, items: 10)
   end
 
   private
