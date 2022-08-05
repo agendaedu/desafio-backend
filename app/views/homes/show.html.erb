@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-lg-6 col-md-8 mx-auto">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1><%= @depute.tx_nome_parlamentar %></h1>
+        <h1><%= @depute.tx_nome_parlamentar %> - <%= @depute.sg_partido %></h1>
         <img src="http://www.camara.leg.br/internet/deputado/bandep/<%= @depute.id_cadastro%>.jpg" width="200px" height="200">
       </div>
     </div>
@@ -25,7 +25,7 @@
             <tr>
               <td><%= expenditure.data_emissao %></td>
               <td><%= expenditure.txt_fornecedor.upcase %></td>
-              <td><%= expenditure.vlr_liquido %></td>
+              <td>R$ <%= number_to_currency(expenditure.vlr_liquido, separator: ",",unit: "", delimiter: "", format: "%n %u") %></td>
               <td><%= link_to "Link", expenditure.url_documento %></td>
             </tr>
           <% end %>

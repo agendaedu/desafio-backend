@@ -3,11 +3,7 @@ class FileCeap < ApplicationRecord
   validates :title, presence: true
   validates :avatar, presence: true
 
-  # callbacks
-  # after_create :process_file
 
-  def process_file
-    binding.remote_pry
-    
-  end
+  enum status: [ :processed, :unprocessed ]
+
 end

@@ -12,7 +12,7 @@
       <tr>
         <th scope="row"><%= file_cap.id %></th>
         <td><%= file_cap.title%></td>
-        <td><%= file_cap.processed %></td>
+        <td><%= file_cap.status.upcase %></td>
         <% if file_cap.avatar.attached? %>
           <td><%= link_to "Baixar", rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success"%></td>
         <% else %>

@@ -22,7 +22,7 @@ module Process
         supplier = find_or_create_supplier(record[1][:supplier])
         create_expenditure(record[1][:expenditure], deputy, supplier)
       end
-      file.update(processed: true)
+      file.processed!
     end
 
     def find_or_create_deputy(record)
@@ -30,6 +30,7 @@ module Process
         deputy.sg_uf = record[:sg_uf]
         deputy.id_cadastro = record[:id_cadastro]
         deputy.cpf = record[:cpf]
+        deputy.sg_partido = record[:sg_partido]
       end
     end
 

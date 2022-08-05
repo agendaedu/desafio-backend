@@ -13,7 +13,7 @@
         <td><%= link_to deputy.tx_nome_parlamentar, home_path(deputy) %></td>
         <td><%= deputy.id_cadastro %></td>
         <td><%= deputy.sg_uf %></td>
-        <td><%= deputy.maior_despesa %></td>
+        <td>R$ <%= number_to_currency(deputy.maior_despesa, unit: "", separator: ",", delimiter: "", format: "%n %u") %></td>
       </tr>
     <% end %>
   </tbody>
