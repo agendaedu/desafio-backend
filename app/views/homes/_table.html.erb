@@ -1,7 +1,6 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Nome</th>
       <th scope="col">Cadastro</th>
       <th scope="col">UF</th>
@@ -11,7 +10,6 @@
   <tbody>
     <% @deputes.each do |deputy| %>
       <tr>
-        <th scope="row"><%= deputy.id %></th>
         <td><%= link_to deputy.tx_nome_parlamentar, home_path(deputy) %></td>
         <td><%= deputy.id_cadastro %></td>
         <td><%= deputy.sg_uf %></td>
