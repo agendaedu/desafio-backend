@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sidekiq'
 gem 'ransack'
 gem 'csv'
+gem "chartkick"
+gem "groupdate"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'simplecov', require: false, group: :test
 group :development, :test do
