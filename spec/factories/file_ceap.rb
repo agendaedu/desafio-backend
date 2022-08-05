@@ -4,7 +4,7 @@ FactoryBot.define do
 
   factory :file_ceap do
     title  { Faker::Name.name }
-    processed { processed }
+    status { "processed" }
     
     trait :with_attachment do
       avatar do
