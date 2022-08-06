@@ -17,9 +17,8 @@ RSpec.describe FileCeapsController, type: :controller do
 
       it { expect(FileCeap.count).to eq(1) }
       it { expect(FileCeap.last.title).to eq(title) }
-      it { expect(Expenditure.count).to eq(10) }
-      it { expect(assigns[:file_ceap].status).to eq("processed") }
-      it { expect(response.content_type).to eq("text/html; charset=utf-8")}
+      it { expect(assigns[:file_ceap].status).to eq("unprocessed") }
+      it { expect(response.media_type).to eq("text/html")}
       it { expect(response).to redirect_to(action: :index)}
     end
 
