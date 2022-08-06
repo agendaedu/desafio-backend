@@ -1,0 +1,18 @@
+pt-BR:
+  pagy:
+    next: Próximo
+    prev: Anterior
+  file_ceaps:
+    index:
+      new_importation: Nova Importação
+    search:
+      search: Pesquisar
+      clear: Limpar
+      title: Titulo
+      processed: Processado
+    table:
+      title: Titulo
+      processed: Processado
+      file: Arquivo
+      download: Baixar
+      empty_file: Sem Arquivo
