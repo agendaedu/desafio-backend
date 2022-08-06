@@ -2,7 +2,7 @@ class FileCeapsController < ApplicationController
 
   def index
     @q = FileCeap.ransack(params[:q])
-    @file_ceaps = @q.result(distinct: true)
+    @pagy, @file_ceaps = pagy(@q.result(distinct: true), items: 10)
 
     respond_to do |format|
       format.html
