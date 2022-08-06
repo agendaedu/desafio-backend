@@ -1,4 +1,5 @@
 pt-BR:
+  format_invalid: não corresponde ao formato correto, por favor inclua um arquivo CSV.
   activerecord:
     errors:
       models:
@@ -7,11 +8,11 @@ pt-BR:
             avatar:
               blank: é obrigatorio.
             title:
-              blank: "é obrigatorio."
+              blank: é obrigatorio.
     attributes:
       file_ceap:
-        title: "Titulo"
-        avatar: "Arquivo"
+        title: Titulo
+        avatar: Arquivo
         status:
           processed: Processado
           unprocessed: Não processado
@@ -61,5 +62,5 @@ pt-BR:
       registre: Cadastro
       cpf: CPF
       ug: UF
-      search: Pesquisar"
+      search: Pesquisar
       clear: Limpar
