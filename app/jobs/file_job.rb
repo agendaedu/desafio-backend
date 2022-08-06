@@ -3,6 +3,6 @@ class FileJob < ApplicationJob
 
   def perform(id)
     file_ceap = FileCeap.find id
-    Process::Creator.run(file_ceap)
+    Imports::Creator.run(file_ceap)
   end
 end

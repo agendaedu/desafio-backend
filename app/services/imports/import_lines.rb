@@ -9,7 +9,7 @@ module Imports
       new(record).run
     end
 
-    def runexpenditure.rb
+    def run
       process
     end
 
