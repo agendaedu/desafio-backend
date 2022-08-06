@@ -22,8 +22,8 @@ class FileCeapsController < ApplicationController
     respond_to do |format|
       if @file_ceap.save
         FileJob.perform_later @file_ceap.id
-        flash[:notice] = t('.digisacs.controllers.create.success!')
-        format.html  { redirect_to file_ceaps_url }
+        flash[:success] = t('.in_process')
+        format.html { redirect_to file_ceaps_url }
       else
         flash[:error] = @file_ceap.errors.full_messages
         format.js
