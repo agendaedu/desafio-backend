@@ -1,5 +1,23 @@
 version: '3.9'
 services:
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    depends_on:
+      - redis
+    env_file:
+      - .env
+    working_dir: /desafio-backend
+    volumes:
+      - .:/desafio-backend
+
+  redis:
+    container_name: redis
+    image: redis:6.2
+    command: redis-server --port 7479
+    ports:
+      - "7479:7479"
+
   db:
     image: postgres
     container_name: postgres
@@ -22,22 +40,7 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - sidekiq
     env_file:
       - .env
-      
-  redis:
-    container_name: redis
-    image: redis:6.2
-    command: redis-server --port 7479
-    ports:
-      - "7479:7479"
-  
-  sidekiq:
-    build: .
-    command: bundle exec sidekiq
-    depends_on:
-      - db
-      - redis
-    env_file:
-      - .env
-    working_dir: /app
+
