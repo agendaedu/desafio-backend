@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sidekiq'
 gem 'ransack'
 gem 'csv'
+gem 'i18n'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
 gem "chartkick"
 gem "groupdate"
