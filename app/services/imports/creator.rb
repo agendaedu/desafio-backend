@@ -1,5 +1,5 @@
-module Process
-  class Creator < ::Base
+module Imports
+  class Creator < Imports::Base
     attr_accessor :file
     def initialize(file)
       @file = file

@@ -1,6 +1,6 @@
-module Process
-  class Main
-    attr_accessor :record
+module Imports
+  class ImportLines
+    attr_reader :record
     def initialize(record)
       @record = record
     end
@@ -9,7 +9,7 @@ module Process
       new(record).run
     end
 
-    def run
+    def runexpenditure.rb
       process
     end
 
@@ -18,7 +18,7 @@ module Process
     def process
       deputy = find_or_create_deputy(record[1][:deputy])
       supplier = find_or_create_supplier(record[1][:supplier])
-      create_expenditure(record[1][:expenditure], deputy, supplier)
+      create_expenditure(record[1][:expenditure], deputy.id, supplier.id)
     end
 
 
@@ -37,14 +37,14 @@ module Process
       end
     end
 
-    def create_expenditure(record, deputy, supplier)
+    def create_expenditure(record, deputy_id, supplier_id)
       Expenditure.create(
         txt_fornecedor: record[:txt_fornecedor],
         vlr_liquido: record[:vlr_liquido],
         data_emissao: record[:data_emissao],
         url_documento: record[:url_documento],
-        deputy_id: deputy.id,
-        supplier_id: supplier.id
+        deputy_id: deputy_id,
+        supplier_id: supplier_id
         )
     end
   end

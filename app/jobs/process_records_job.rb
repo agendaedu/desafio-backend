@@ -2,6 +2,6 @@ class ProcessRecordsJob < ApplicationJob
   queue_as :default
 
   def perform(args)
-    Process::Main.run(args)
+    Imports::ImportLines.run(args)
   end
 end
