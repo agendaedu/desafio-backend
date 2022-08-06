@@ -16,3 +16,22 @@ pt-BR:
       file: Arquivo
       download: Baixar
       empty_file: Sem Arquivo
+  homes:
+    show:
+      issuance_date: Data Emissão
+      supplier: Fornecedor
+      value: Valor Liquido
+      url_document: URL Documento
+      link: Link
+    table:
+      name: Nome
+      registre: Cadastro
+      uf: UF
+      higher_expenses: Maior Despesa
+    search:
+      name: Nome Parlamentar
+      registre: Cadastro
+      cpf: CPF
+      ug: UF
+      search: "Pesquisar"
+      clear: "Limpar"

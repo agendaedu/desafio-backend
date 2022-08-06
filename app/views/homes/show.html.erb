@@ -14,10 +14,10 @@
       <table class="table table-hover border border-2 rounded-3">
         <thead>
           <tr>
-            <th scope="col">Data Emissão</th>
-            <th scope="col">Fornecedor</th>
-            <th scope="col">Valor Liquido</th>
-            <th scope="col">URL Documento</th>
+            <th scope="col"><%= t(".issuance_date")%></th>
+            <th scope="col"><%= t(".supplier") %></th>
+            <th scope="col"><%= t(".value") %></th>
+            <th scope="col"><%= t(".url_document") %></th>
           </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
               <td><%= expenditure.data_emissao %></td>
               <td><%= expenditure.txt_fornecedor.upcase %></td>
               <td>R$ <%= number_to_currency(expenditure.vlr_liquido, separator: ",",unit: "", delimiter: "", format: "%n %u") %></td>
-              <td><%= link_to "Link", expenditure.url_documento %></td>
+              <td><%= link_to t(".link"), expenditure.url_documento %></td>
             </tr>
           <% end %>
         </tbody>
