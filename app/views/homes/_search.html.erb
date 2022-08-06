@@ -17,7 +17,7 @@
 
     <div class="col-sm-3">
       <%= f.label :sg_uf_eq, t(".uf"), class: "form-label" %>
-      <%= f.select :sg_uf_eq, (ufgs.collect{|k, _| [ k, k]}), { include_blank: true }, { class:"form-control"} %>
+      <%= f.select :sg_uf_eq, (select_states.collect{|k, _| [ k, k]}), { include_blank: true }, { class:"form-control"} %>
     </div>
   </div>
   <div class="mb-3 row">
