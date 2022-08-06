@@ -1,10 +1,19 @@
 pt-BR:
+  shared:
+    footer:
+      back_to_top: Voltar para o topo
   pagy:
     next: Próximo
     prev: Anterior
+
   file_ceaps:
+    new:
+      csv_import: Importacao CSV
+    form:
+      save: Salvar
+      cancel: Cancelar
     index:
-      new_importation: Nova Importação
+      new_import: Nova Importação
     search:
       search: Pesquisar
       clear: Limpar

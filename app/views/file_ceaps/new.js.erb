@@ -1,4 +1,3 @@
-console.log('Helo')
-$("#exampleModalLabel").html("Importação de CSV")
+$("#exampleModalLabel").html("<%= t(".csv_import")%>")
 $(".modal-body").html("<%= j (render 'form') %>")
 $("#exampleModal").modal("show")

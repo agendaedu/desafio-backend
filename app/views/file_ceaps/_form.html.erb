@@ -6,7 +6,8 @@
     <%= form.file_field :avatar, class: "form-control", accept: '.csv' %>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-    <%= form.submit "Salvar", class: "btn btn-primary" %>
+
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><%= t(".cancel") %></button>
+    <%= form.submit t(".save"), class: "btn btn-primary" %>
   </div>
 <% end %>
