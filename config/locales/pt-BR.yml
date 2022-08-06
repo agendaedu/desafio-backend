@@ -1,11 +1,17 @@
 pt-BR:
+  activerecord:
+    attributes:
+      file_ceap:
+        status:
+          processed: Processado
+          unprocessed: Não processado
+          in_process: Em processamento
   shared:
     footer:
       back_to_top: Voltar para o topo
   pagy:
     next: Próximo
     prev: Anterior
-
   file_ceaps:
     create:
       in_process: Em processamento
