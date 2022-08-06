@@ -5,16 +5,18 @@ include ActionDispatch::TestProcess::FixtureFile
 RSpec.describe FileCeapsController, type: :controller do
 
   describe "POST #create" do
+    let(:title) { }
+    let(:path) { "spec/support/assets/files/#{title}" }
+    before do
+      post :create, params: {
+        file_ceap: {
+        title: title,
+        avatar: fixture_file_upload(path)
+      }}, format: :html
+    end
+
     context "file_ceap valid" do
       let(:title) { "Ano-2021.csv" }
-      before do
-        post :create, params: {
-          file_ceap: {
-          title: title,
-          avatar: fixture_file_upload("spec/support/assets/files/#{title}")
-        }}, format: :html
-      end
-
       it { expect(FileCeap.count).to eq(1) }
       it { expect(FileCeap.last.title).to eq(title) }
       it { expect(assigns[:file_ceap].status).to eq("unprocessed") }
@@ -24,13 +26,6 @@ RSpec.describe FileCeapsController, type: :controller do
 
     context "file_ceap invalid" do
       let(:title) { "Ano-2021-invalid.csv" }
-      before do
-        post :create, params: {
-          file_ceap: {
-          title: title,
-          avatar: fixture_file_upload("spec/support/assets/files/#{title}")
-        }}, format: :html
-      end
       it { expect(Expenditure.count).to eq(0) }
     end
 
