@@ -24,9 +24,18 @@ RSpec.describe FileCeapsController, type: :controller do
       it { expect(response).to redirect_to(action: :index)}
     end
 
-    context "file_ceap invalid" do
+    context "file_ceap invalid type" do
+      let(:title) { "Ano-2021-invalid.css" }
+      it { expect(assigns[:file_ceap].status).to eq("unprocessed") }
+      it { expect(FileCeap.count).to eq(0) }
+      it { expect(assigns[:file_ceap].errors.full_messages.join("")).to include(I18n.t(".format_invalid")) }
+      it { expect(response).to redirect_to(action: :index)}
+    end
+
+    context "file_ceap invalid uf" do
       let(:title) { "Ano-2021-invalid.csv" }
-      it { expect(Expenditure.count).to eq(0) }
+      it { expect(FileCeap.count).to eq(1) }
+      it { expect(response).to redirect_to(action: :index)}
     end
   end
 

@@ -14,7 +14,7 @@ class FileCeap < ApplicationRecord
 
   def correct_document_mime_type
     if avatar.attached? && !avatar.content_type.in?(%w(text/csv text/CSV))
-      errors.add(:avatar, t(".format_invalid"))
+      errors.add(:avatar, I18n.t(".format_invalid"))
     end
   end
 end

@@ -4,7 +4,7 @@ RSpec.describe HomesController, type: :controller do
 
   describe "GET #index" do
     let(:title) { "Ano-2021.csv" }
-    let(:deputy) { create(:deputy, :with_expenditures) }
+    let(:deputy) { deputy_with_expenditures }
     before { get :index}
 
     it "return file_ceaps" do
