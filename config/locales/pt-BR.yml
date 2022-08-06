@@ -1,7 +1,17 @@
 pt-BR:
   activerecord:
+    errors:
+      models:
+        file_ceap:
+          attributes:
+            avatar:
+              blank: é obrigatorio.
+            title:
+              blank: "é obrigatorio."
     attributes:
       file_ceap:
+        title: "Titulo"
+        avatar: "Arquivo"
         status:
           processed: Processado
           unprocessed: Não processado

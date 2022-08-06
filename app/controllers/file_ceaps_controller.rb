@@ -16,7 +16,6 @@ class FileCeapsController < ApplicationController
     end
   end
 
-
   def create
     @file_ceap = FileCeap.new(params_file_ceap)
     respond_to do |format|
@@ -25,8 +24,8 @@ class FileCeapsController < ApplicationController
         flash[:success] = t('.in_process')
         format.html { redirect_to file_ceaps_url }
       else
-        flash[:error] = @file_ceap.errors.full_messages
-        format.js
+        flash[:error] = @file_ceap.errors.full_messages.join("")
+        format.html { redirect_to file_ceaps_url }
       end
     end
   end
