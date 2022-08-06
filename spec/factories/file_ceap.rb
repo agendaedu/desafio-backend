@@ -12,7 +12,7 @@ FactoryBot.define do
         ActiveStorage::Blob.create_and_upload!(
           io: File.open(arquive, 'rb'),
           filename: 'Ano-2021.csv',
-          content_type: 'image/jpeg'
+          content_type: 'text/csv'
         ).signed_id
       end
     end

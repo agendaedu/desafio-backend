@@ -14,7 +14,6 @@ RSpec.describe FileJob, type: :job do
     it 'process file' do
       ActiveJob::Base.queue_adapter = :test
       described_class.perform_later(file_ceap.id)
-      byebug
       expect(described_class).to have_been_enqueued
     end
   end
