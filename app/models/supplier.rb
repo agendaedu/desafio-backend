@@ -1,4 +1,3 @@
 class Supplier < ApplicationRecord
-  validates :txt_fornecedor, presence: true
-  validates :txt_cnpj_cpf, presence: true
+  validates :txt_fornecedor, :txt_cnpj_cpf, presence: true
 end
