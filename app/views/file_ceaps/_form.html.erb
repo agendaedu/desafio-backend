@@ -1,6 +1,6 @@
 <%= form_with model: @file_ceap do |form| %>
   <div class="mb-3">
-    <%= form.text_field :title, class: "form-control", placeholder:"Titulo" %>
+    <%= form.text_field :title, class: "form-control", placeholder:"Titulo", required: true %>
   </div>
   <div class="mb-3">
     <%= form.file_field :avatar, class: "form-control", accept: '.csv' %>
