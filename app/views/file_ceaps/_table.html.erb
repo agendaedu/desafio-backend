@@ -2,9 +2,9 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Titulo</th>
-      <th scope="col">Processado</th>
-      <th scope="col">Arquivo</th>
+      <th scope="col"><%= t(".title")%></th>
+      <th scope="col"><%= t(".processed") %></th>
+      <th scope="col"><%= t(".file") %></th>
     </tr>
   </thead>
   <tbody>
@@ -14,9 +14,9 @@
         <td><%= file_cap.title%></td>
         <td><%= file_cap.status.upcase %></td>
         <% if file_cap.avatar.attached? %>
-          <td><%= link_to "Baixar", rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success"%></td>
+          <td><%= link_to t(".download"), rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success"%></td>
         <% else %>
-          <td>Sem Arquivo</td>
+          <td><%= t(".empty_file")%></td>
         <% end %>
       </tr>
     <% end %>
