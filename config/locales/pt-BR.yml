@@ -7,6 +7,8 @@ pt-BR:
     prev: Anterior
 
   file_ceaps:
+    create:
+      in_process: Em processamento
     new:
       csv_import: Importacao CSV
     form:
@@ -32,6 +34,7 @@ pt-BR:
       value: Valor Liquido
       url_document: URL Documento
       link: Link
+      deputy_not_fount: Parlamentar não encontrado
     table:
       name: Nome
       registre: Cadastro
@@ -42,5 +45,5 @@ pt-BR:
       registre: Cadastro
       cpf: CPF
       ug: UF
-      search: "Pesquisar"
-      clear: "Limpar"
+      search: Pesquisar"
+      clear: Limpar
