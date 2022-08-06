@@ -1,0 +1,55 @@
+pt-BR:
+  activerecord:
+    attributes:
+      file_ceap:
+        status:
+          processed: Processado
+          unprocessed: Não processado
+          in_process: Em processamento
+  shared:
+    footer:
+      back_to_top: Voltar para o topo
+  pagy:
+    next: Próximo
+    prev: Anterior
+  file_ceaps:
+    create:
+      in_process: Em processamento
+    new:
+      csv_import: Importacao CSV
+    form:
+      save: Salvar
+      cancel: Cancelar
+    index:
+      new_import: Nova Importação
+    search:
+      search: Pesquisar
+      clear: Limpar
+      title: Titulo
+      processed: Processado
+    table:
+      title: Titulo
+      processed: Processado
+      file: Arquivo
+      download: Baixar
+      empty_file: Sem Arquivo
+  homes:
+    show:
+      issuance_date: Data Emissão
+      supplier: Fornecedor
+      value: Valor Liquido
+      url_document: URL Documento
+      link: Link
+      deputy_not_fount: Parlamentar não encontrado
+    table:
+      name: Nome
+      registre: Cadastro
+      uf: UF
+      higher_expenses: Maior Despesa
+    search:
+      name: Nome Parlamentar
+      registre: Cadastro
+      cpf: CPF
+      ug: UF
+      search: Pesquisar"
+      clear: Limpar
