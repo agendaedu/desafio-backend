@@ -17,22 +17,20 @@ RSpec.describe Deputy, type: :model do
     end
 
     context "uniqueless" do
-      let(:duplicate) { create_list(:deputy, 2) }
+      let(:deputy_1) { create(:deputy) }
 
       it 'cpf valid' do
-        expect(deputy).to be_valid
+        expect(deputy_1).to be_valid
       end
 
       it "cpf duplicate invalid" do
-        second_deputy = duplicate.first
-        second_deputy.cpf = duplicate.last.cpf
-        expect(second_deputy).to_not be_valid
+        deputy.cpf = deputy_1.cpf
+        expect(deputy).to_not be_valid
       end
 
       it "id_cadastro duplicate invald" do
-        second_deputy = duplicate.first
-        second_deputy.id_cadastro = duplicate.last.id_cadastro
-        expect(second_deputy).to_not be_valid
+        deputy.id_cadastro = deputy_1.id_cadastro
+       expect(deputy).to_not be_valid
       end
     end
 
