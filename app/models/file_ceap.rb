@@ -5,8 +5,8 @@ class FileCeap < ApplicationRecord
   enum status: [:unprocessed, :in_process, :processed]
 
   def self.status_attributes_for_select
-    statuses.map do |status, _|
-      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.status.#{status}"), status]
+    statuses.map do |status, index|
+      [I18n.t("activerecord.attributes.#{model_name.i18n_key}.status.#{status}"), index]
     end
   end
 
