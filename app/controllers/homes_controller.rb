@@ -9,7 +9,7 @@ class HomesController < ApplicationController
     end
   end
 
-  def show 
+  def show
     @pagy, @expenditures = pagy(@depute.expenditures, items: 10)
   end
 
@@ -17,5 +17,8 @@ class HomesController < ApplicationController
 
   def search_depute
     @depute = Deputy.find params[:id]
+  rescue ActiveRecord::RecordNotFound
+    flash[:warning] = t(".deputy_not_fount")
+    redirect_to homes_url
   end
 end
