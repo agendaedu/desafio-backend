@@ -12,9 +12,12 @@
       <tr>
         <th scope="row"><%= file_cap.id %></th>
         <td><%= file_cap.title%></td>
-        <td><%= file_cap.status.upcase %></td>
+        <td><%= status(file_cap.status) %></td>
         <% if file_cap.avatar.attached? %>
-          <td><%= link_to t(".download"), rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success"%></td>
+          <td><%= link_to rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success" do %>
+            <i class="fa-solid fa-file-csv"></i> <%= t(".download")%>
+            <% end %>
+          </td>
         <% else %>
           <td><%= t(".empty_file")%></td>
         <% end %>
