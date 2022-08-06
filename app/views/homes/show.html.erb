@@ -2,8 +2,11 @@
   <div class="row">
     <div class="col-lg-6 col-md-8 mx-auto">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1><%= @depute.tx_nome_parlamentar %> - <%= @depute.sg_partido %></h1>
-        <img src="http://www.camara.leg.br/internet/deputado/bandep/<%= @depute.id_cadastro%>.jpg" width="200px" height="200">
+        <div>
+          <h1><%= @depute.tx_nome_parlamentar %></h1>
+          <h4><%= @depute.sg_partido %></h4>
+        </div>
+        <img class="border border-3 rounded-circle" src="http://www.camara.leg.br/internet/deputado/bandep/<%= @depute.id_cadastro%>.jpg" width="200px" height="200">
       </div>
     </div>
     <div class="col">
