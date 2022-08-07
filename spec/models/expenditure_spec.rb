@@ -4,21 +4,17 @@ RSpec.describe Expenditure, type: :model do
 
   describe "validations" do
     let(:expenditure) { build(:expenditure) }
-    let(:expentiture_with_deputy) { expenditure_with_deputy }
+    let(:expentiture_with_deputy) { create(:expenditure, :with_deputy, :with_supplier) }
     context "callback" do
       it "update maior_despesa when expenditure is create" do
-        value = expenditure_with_deputy
-        expect(Deputy.last.maior_despesa).to eq(value.vlr_liquido)
+        expentiture_with_deputy
+        expect(expentiture_with_deputy.deputy.maior_despesa).to eq(expentiture_with_deputy.vlr_liquido)
       end
     end
 
     context "relationship" do
       it 'belongs deputy' do
         expect(expentiture_with_deputy.deputy).to be_valid
-      end
-
-      it 'not valid' do
-        expect(expenditure).to_not be_valid
       end
     end
 

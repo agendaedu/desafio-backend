@@ -3,8 +3,8 @@ class Expenditure < ApplicationRecord
 
   after_save :expenditure_maximum
   # Relationship
-  belongs_to :deputy
-  belongs_to :supplier
+  belongs_to :deputy, optional: true
+  belongs_to :supplier, optional: true
 
   def expenditure_maximum
     self.deputy.update_column(:maior_despesa, deputy.expenditures.maximum(:vlr_liquido))
