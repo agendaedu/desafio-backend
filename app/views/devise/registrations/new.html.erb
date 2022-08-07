@@ -3,7 +3,7 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card my-5">
         <div class="card-body">
-          <h5 class="card-title text-center">Sign up</h5>
+          <h5 class="card-title text-center"><%= t(".sign_up") %></h5>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="form-group">
@@ -15,19 +15,19 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
             </div>
             <div class="form-group">
-              <%= f.label :password %>
+              <%= f.label :password, t(".password") %>
               <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <em>(<%= t(".minimum_password_length", count: @minimum_password_length) %>)</em>
               <% end %><br />
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
             </div>
             <div class="form-group">
-              <%= f.label :password_confirmation %><br />
+              <%= f.label :password_confirmation, t(".confimed_password") %><br />
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
             </div>
             <div class="actions">
               <div class="d-grid gap-2 pt-2">
-                <%= f.submit "Sign up", class: "btn btn-dark" %>
+                <%= f.submit t(".sign_up"), class: "btn btn-dark" %>
               </div>
               <div class="d-grid gap-2 pt-2">
                 <%= render "devise/shared/links" %>
