@@ -1,16 +1,9 @@
 module Imports
   class Creator < Imports::Base
     attr_accessor :file
+
     def initialize(file)
       @file = file
-    end
-
-    def self.run(file)
-      new(file).run
-    end
-
-    def run
-      process
     end
 
     private

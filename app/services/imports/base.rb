@@ -1,6 +1,16 @@
 require "csv"
 module Imports
   class Base
+    def self.run(file)
+      new(file).run
+    end
+
+    def run
+      process
+    end
+
+    private
+
     def read_file(record)
       hash_attributes = {}
       quote_chars = %w(" | ~ ^ & *)

@@ -1,16 +1,8 @@
 module Imports
-  class ImportLines
+  class ImportLines < Imports::Base
     attr_reader :record
     def initialize(record)
       @record = record
-    end
-
-    def self.run(record)
-      new(record).run
-    end
-
-    def run
-      process
     end
 
     private
