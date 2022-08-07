@@ -1,8 +1,10 @@
 module Imports
   class ImportLines < Imports::Base
-    attr_reader :record
-    def initialize(record)
+    attr_reader :record, :processed, :file
+    def initialize(record, processed, file_id)
       @record = record
+      @processed = processed
+      @file = FileCeap.find file_id
     end
 
     private
@@ -11,6 +13,7 @@ module Imports
       deputy = find_or_create_deputy(record[1][:deputy])
       supplier = find_or_create_supplier(record[1][:supplier])
       create_expenditure(record[1][:expenditure], deputy.id, supplier.id)
+      file.processed! if processed
     end
 
 

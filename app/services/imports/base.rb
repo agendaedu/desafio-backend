@@ -1,8 +1,8 @@
 require "csv"
 module Imports
   class Base
-    def self.run(file)
-      new(file).run
+    def self.run(file, processed = false, file_id = nil)
+      new(file, processed, file_id).run
     end
 
     def run
