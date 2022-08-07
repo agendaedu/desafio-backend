@@ -1,0 +1,27 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"><%= t(".title")%></th>
+      <th scope="col"><%= t(".status") %></th>
+      <th scope="col"><%= t(".file") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @file_ceaps.each do |file_cap| %>
+      <tr>
+        <th scope="row"><%= file_cap.id %></th>
+        <td><%= file_cap.title%></td>
+        <td><%= status(file_cap.status) %></td>
+        <% if file_cap.avatar.attached? %>
+          <td><%= link_to rails_blob_path(file_cap.avatar, disposition: "attachment"), class: "btn btn-success" do %>
+            <i class="fa-solid fa-file-csv"></i> <%= t(".download")%>
+            <% end %>
+          </td>
+        <% else %>
+          <td><%= t(".empty_file")%></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
