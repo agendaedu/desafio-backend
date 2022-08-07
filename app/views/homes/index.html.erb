@@ -1,4 +1,4 @@
-<%= link_to t(".import_file"), file_ceaps_path, class: "btn btn-primary", style: "float:right;" %>
+<%= link_to t(".import_file"), file_ceaps_path, class: "btn btn-primary", style: "float:right;" if user_signed_in? %>
 <br/>
 <%= render "search" %>
 <hr>
