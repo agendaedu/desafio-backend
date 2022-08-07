@@ -1,0 +1,29 @@
+<%= search_form_for @q, url: homes_path do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-3">
+      <%= f.label :tx_nome_parlamentar_cont, t(".name"), class: "form-label" %>
+      <%= f.search_field :tx_nome_parlamentar_cont, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :id_cadastro_eq, t(".registre"), class: "form-label" %>
+      <%= f.search_field :id_cadastro_eq, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :cpf_eq, t(".cpf"), class: "form-label" %>
+      <%= f.search_field :cpf_eq, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :sg_uf_eq, t(".uf"), class: "form-label" %>
+      <%= f.select :sg_uf_eq, (select_states.collect{|k, _| [ k, k]}), { include_blank: true }, { class:"form-control"} %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10">
+      <%= f.submit t(".search"), class: "btn btn-primary mb-3" %>
+      <%= link_to t(".clear"), homes_url, class: "btn btn-primary mb-3" %>
+    </div>
+  </div>
+<% end %>
