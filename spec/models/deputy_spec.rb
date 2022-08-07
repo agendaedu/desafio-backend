@@ -6,7 +6,7 @@ RSpec.describe Deputy, type: :model do
     let(:deputy) { build(:deputy) }
     
     context "relationship" do
-      let(:with_expenditures) { deputy_with_expenditures(expenditures_count: 5) }
+      let(:with_expenditures) { create(:deputy, :with_expenditures) }
       it '5 expenditures' do
         expect(with_expenditures.expenditures.count).to eq(5)
       end

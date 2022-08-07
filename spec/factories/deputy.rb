@@ -6,13 +6,12 @@ FactoryBot.define do
 
     id_cadastro { Faker::Number.number(digits: 4) }
     cpf { Faker::IDNumber.brazilian_citizen_number(formatted: true) }
+
+    trait :with_expenditures do
+      after(:create) do |deputy|
+        create_list(:expenditure, 5, :with_supplier, deputy: deputy)
+      end
+    end
   end
 end
 
-def deputy_with_expenditures(expenditures_count: 5)
-  FactoryBot.create(:deputy) do |deputy|
-    FactoryBot.create_list(:expenditure, expenditures_count,
-                           deputy: deputy,
-                           supplier: FactoryBot.create(:supplier))
-  end
-end
