@@ -32,6 +32,7 @@ gem 'ransack'
 gem 'csv'
 gem 'i18n'
 gem 'pagy', '~> 5.10', '>= 5.10.1'
+gem "aws-sdk-s3", require: false
 gem "chartkick"
 gem "groupdate"
 gem 'dotenv-rails', groups: [:development, :test]
