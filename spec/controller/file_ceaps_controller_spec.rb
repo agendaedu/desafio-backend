@@ -20,8 +20,8 @@ RSpec.describe FileCeapsController, type: :controller do
       it { expect(FileCeap.count).to eq(1) }
       it { expect(FileCeap.last.title).to eq(title) }
       it { expect(assigns[:file_ceap].status).to eq("in_process") }
-      it { expect(response.media_type).to eq("text/html")}
-      it { expect(response).to redirect_to(action: :index)}
+      it { expect(response.media_type).to eq("text/html") }
+      it { expect(response).to redirect_to(action: :index) }
     end
 
     context "file_ceap invalid type" do
