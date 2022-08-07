@@ -1,18 +1,20 @@
-<%= search_form_for @q do |f| %>
-  <div class="mb-3 row">
-    <div class="col-sm-3">
-      <%= f.label :title_cont, t(".title"), class: "form-label" %>
-      <%= f.search_field :title_cont, class:"form-control" %>
+<div class="shadow-sm p-3 mb-5 bg-body rounded">
+  <%= search_form_for @q do |f| %>
+    <div class="mb-3 row">
+      <div class="col-sm-3">
+        <%= f.label :title_cont, t(".title"), class: "form-label" %>
+        <%= f.search_field :title_cont, class:"form-control" %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.label :status_eq, t(".processed"), class: "form-label" %>
+        <%= f.select :status_eq, FileCeap.status_attributes_for_select, {}, class: "form-control" %>
+      </div>
     </div>
-    <div class="col-sm-3">
-      <%= f.label :status_eq, t(".processed"), class: "form-label" %>
-      <%= f.select :status_eq, FileCeap.status_attributes_for_select, {}, class: "form-control" %>
+    <div class="mb-3 row">
+      <div class="col-sm-10">
+        <%= f.submit t(".search"), class: "btn btn-primary mb-3" %>
+        <%= link_to t(".clear"), file_ceaps_url, class: "btn btn-primary mb-3" %>
+      </div>
     </div>
-  </div>
-  <div class="mb-3 row">
-    <div class="col-sm-10">
-      <%= f.submit t(".search"), class: "btn btn-primary mb-3" %>
-      <%= link_to t(".clear"), file_ceaps_url, class: "btn btn-primary mb-3" %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
