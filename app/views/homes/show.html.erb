@@ -29,7 +29,10 @@
               <td><%= expenditure.data_emissao %></td>
               <td><%= expenditure.txt_fornecedor.upcase %></td>
               <td>R$ <%= number_to_currency(expenditure.vlr_liquido, separator: ",",unit: "", delimiter: "", format: "%n %u") %></td>
-              <td><%= link_to t(".link"), expenditure.url_documento %></td>
+              <td><%= link_to  expenditure.url_documento, class: "btn btn-success", target: :_blank do %>
+                <i class="fa-solid fa-up-right-from-square"></i> <%= t(".link") %>
+              <% end %>
+              </td>
             </tr>
           <% end %>
         </tbody>
