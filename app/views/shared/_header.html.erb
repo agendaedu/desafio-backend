@@ -10,6 +10,13 @@
           <ul class="list-unstyled">
             <li><a href="https://www.linkedin.com/in/john-diego-oliveira-silva-89a137137/" class="text-white">Linkedin</a></li>
             <li><a href="mailto:johnoliveirasilva9@gmail.com" class="text-white">Email me</a></li>
+            <% if user_signed_in? %>
+              <%= link_to 'Edit Perfil', edit_user_registration_path, class: 'mm-cl-white' %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'mm-cl-white' %>
+            <% else %>
+            <%= link_to t('.sign_up'), new_user_registration_path, class: 'mm-cl-white' %>
+            <%= link_to t('.sign_in'), new_user_session_path, class: 'mm-cl-white' %>
+          <% end %>
           </ul>
         </div>
       </div>
