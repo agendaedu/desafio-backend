@@ -127,6 +127,8 @@ GEM
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     ffi (1.15.5)
+    flag-icons-rails (3.4.6.1)
+      sass-rails
     globalid (1.0.0)
       activesupport (>= 5.0)
     groupdate (6.1.0)
@@ -320,6 +322,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails (= 6.2)
   faker!
+  flag-icons-rails
   groupdate
   i18n
   jbuilder (~> 2.7)

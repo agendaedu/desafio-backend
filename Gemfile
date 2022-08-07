@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'pg', '~> 1.4'
 gem 'devise', '4.8.1'
 # Use Puma as the app server
+gem 'flag-icons-rails'
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
