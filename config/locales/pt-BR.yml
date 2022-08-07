@@ -1,8 +1,42 @@
 pt-BR:
+  errors:
+    messages:
+      already_confirmed: já foi confirmado
+      confirmation_period_expired: É necessário ser confirmado dentro do período %{period}, por favor requisite um novo usuário.
+      expired: expirou, por favor solicite uma nova
+      not_found: não encontrado
+      not_locked: não foi bloqueado
+      not_saved:
+        one: 'Não foi possível salvar %{resource}: 1 erro'
+        other: 'Não foi possível salvar %{resource}: %{count} erros.'
+  devise:
+    shared:
+      links:
+        sign_up: Cadastrar
+        sign_in: Login
+        forget_password: Esqueceu sua senha ?
+    sessions:
+      new:
+        remember_me: Me lembre
+        password: Senha
+        login: Entrar
+    passwords:
+      edit:
+          change_my_password: Alterar minha senha
+          change_your_password: Alterar sua senha
+          confirm_new_password: Confirme sua nova senha
+          new_password: Nova senha
+      new:
+        forget_password: Esqueceu sua senha ?
+        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
   format_invalid: não corresponde ao formato correto, por favor inclua um arquivo CSV.
   activerecord:
     errors:
       models:
+        user:
+          attributes:
+            email:
+              blank: é obrigatorio
         file_ceap:
           attributes:
             avatar:
@@ -18,8 +52,9 @@ pt-BR:
           unprocessed: Não processado
           in_process: Em processamento
   shared:
-    footer:
-      back_to_top: Voltar para o topo
+    header:
+     sign_up: Cadastrar
+     sign_in: Login 
   pagy:
     next: Próximo
     prev: Anterior

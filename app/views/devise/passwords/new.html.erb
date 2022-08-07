@@ -3,7 +3,7 @@
     <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
       <div class="card my-5">
         <div class="card-body">
-          <h3 class="card-title text-center">Forgot your password?</h3>
+          <h3 class="card-title text-center"><%= t(".forget_password") %></h3>
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
             <%= render "devise/shared/error_messages", resource: resource %>
             <div class="form-group">
@@ -12,7 +12,7 @@
             </div>
             <div class="actions">
               <div class="d-grid gap-2 pt-2">
-                <%= f.submit "Send me reset password instructions", class: 'btn btn-primary' %>
+                <%= f.submit t(".send_me_reset_password_instructions"), class: 'btn btn-primary' %>
               </div>
             </div>
           <% end %>
