@@ -1,5 +1,5 @@
 class FileCeapsController < ApplicationController
-
+  before_action :authenticate_user!
   def index
     @q = FileCeap.ransack(params[:q])
     @pagy, @file_ceaps = pagy(@q.result(distinct: true).order(id: :desc), items: 10)

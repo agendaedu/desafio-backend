@@ -1,12 +1,14 @@
 require 'rails_helper'
-
+require_relative "../support/devise"
 
 include ActionDispatch::TestProcess::FixtureFile
 RSpec.describe FileCeapsController, type: :controller do
 
   describe "POST #create" do
+    login_user
     let(:title) { }
     let(:path) { "spec/support/assets/files/#{title}" }
+
     before do
       post :create, params: {
         file_ceap: {
@@ -40,6 +42,7 @@ RSpec.describe FileCeapsController, type: :controller do
   end
 
   describe "GET #index" do
+    login_user
     let(:title) { "Ano-2021.csv" }
     before { get :index }
     
