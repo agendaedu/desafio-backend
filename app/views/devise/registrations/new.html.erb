@@ -26,10 +26,12 @@
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
             </div>
             <div class="actions">
-              <div class="d-grid gap-2">
-                <%= f.submit "Sign up", class: "btn btn-dark"  %>
+              <div class="d-grid gap-2 pt-2">
+                <%= f.submit "Sign up", class: "btn btn-dark" %>
               </div>
-              <%= render "devise/shared/links" %>
+              <div class="d-grid gap-2 pt-2">
+                <%= render "devise/shared/links" %>
+              </div>
             </div>
           <% end %>
         </div>

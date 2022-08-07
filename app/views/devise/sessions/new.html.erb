@@ -20,10 +20,14 @@
                 </div>
               <% end %>
               <div class="actions">
-                <%= f.submit "Log in", class: "btn btn-dark" %>
+                <div class="d-grid gap-2 pt-2">
+                  <%= f.submit "Log in", class: "btn btn-dark" %>
+                </div>
               </div>
             <% end %>
-          <%= render "devise/shared/links" %>
+          <div class="d-grid gap-2 pt-2">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
     </div>

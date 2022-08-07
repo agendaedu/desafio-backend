@@ -11,10 +11,14 @@
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
             </div>
             <div class="actions">
-              <%= f.submit "Send me reset password instructions", class: 'btn btn-dark' %>
+              <div class="d-grid gap-2 pt-2">
+                <%= f.submit "Send me reset password instructions", class: 'btn btn-primary' %>
+              </div>
             </div>
           <% end %>
-          <%= render "devise/shared/links" %>
+          <div class="d-grid gap-2 pt-2">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       </div>
     </div>
