@@ -40,11 +40,13 @@ pt-BR:
       processed: Processado
     table:
       title: Titulo
-      processed: Processado
+      status: Status
       file: Arquivo
       download: Baixar
       empty_file: Sem Arquivo
   homes:
+    index:
+      import_file: Importação de Arquivos
     show:
       issuance_date: Data Emissão
       supplier: Fornecedor
