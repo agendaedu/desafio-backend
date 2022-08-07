@@ -10,13 +10,6 @@
           <ul class="list-unstyled">
             <li><a href="https://www.linkedin.com/in/john-diego-oliveira-silva-89a137137/" class="text-white">Linkedin</a></li>
             <li><a href="mailto:johnoliveirasilva9@gmail.com" class="text-white">Email</a></li>
-            <% if user_signed_in? %>
-              <li><%= link_to 'Edit Perfil', edit_user_registration_path, class: 'text-white' %></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-white' %></li>
-            <% else %>
-              <li><%= link_to t('.sign_up'), new_user_registration_path, class: 'text-white' %></li>
-              <li><%= link_to t('.sign_in'), new_user_session_path, class: 'text-white' %></li>
-          <% end %>
           </ul>
         </div>
       </div>
@@ -24,6 +17,13 @@
   </div>
   <div class="navbar navbar-dark bg-dark shadow-sm">
     <div class="container">
+      <% if user_signed_in? %>
+        <%= link_to 'Edit Perfil', edit_user_registration_path, class: 'text-white navbar-brand' %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'text-white navbar-brand' %>
+      <% else %>
+        <%= link_to t('.sign_up'), new_user_registration_path, class: 'text-white navbar-brand' %>
+        <%= link_to t('.sign_in'), new_user_session_path, class: 'text-white navbar-brand' %>
+      <% end %>
       <%= link_to homes_url, class:"navbar-brand d-flex align-items-center" do %>
         <i class='fas fa-shield-virus'></i>&nbsp;&nbsp;<strong>Desafio Backend</strong>
       <% end %>
