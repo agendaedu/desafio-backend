@@ -1,0 +1,9 @@
+<% if resource.errors.any? %>
+  
+  <% resource.errors.each do |key, value| %>
+    <div class="<%= flash_class('error') %>" role="alert">
+      <%= t("#{key}") %> <%= value %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+<% end %>

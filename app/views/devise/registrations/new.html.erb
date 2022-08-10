@@ -1,0 +1,41 @@
+<section class="py-5">
+  <div class="container col-6 px-4 px-lg-5 mt-5">
+      <div class="card">
+       <div class="card-body">
+      <h2 class="card-title"><%=  t("Sign up") %></h2>
+      <p class="card-text">
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name) , class: "form-control") do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="mb-3">
+      <%= f.label :email , class: "form-label" %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :password , class: "form-label"  %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> <%= t('characters minimum') %>)</em>
+      <% end %><br />
+      <%= f.password_field :password , class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= f.label :password_confirmation , class: "form-label"  %><br />
+      <%= f.password_field :password_confirmation, class: "form-control"%>
+    </div>
+
+    <div class="mb-3">
+      <%= f.submit t("Sign up"), class: "btn btn-primary btn-lg"%>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</p>      
+</div>
+</div>
+</div>
+
+
+</section>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DesafioBackend</title>
+    <title><%= t('Congressmen Manager') %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= render "shared/navigation" %>
+      
+      <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>" role="alert">
+              <%= value %>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      <% end %>
+
+      <%= yield %>
+      
+    </div>
   </body>
 </html>

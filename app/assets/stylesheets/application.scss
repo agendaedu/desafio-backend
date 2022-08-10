@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap/scss/bootstrap";
+ .nav-item {
+   padding-right: 10px
+ }
