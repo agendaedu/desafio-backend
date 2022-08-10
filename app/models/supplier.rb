@@ -1,6 +1,5 @@
 class Supplier < ApplicationRecord
   has_many :expenses, dependent: :destroy
-  paginates_per 10
 
   validates :cpf_cnpj, uniqueness: true
   validates :name, presence: true
