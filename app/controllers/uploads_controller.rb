@@ -8,9 +8,10 @@ class UploadsController < ApplicationController
   end
 
   def create
-    @upload = Upload.new
+    @upload = Upload.new(upload_params)
     respond_to do |format|
       if @upload.save
+        UploadWorker.perform_async(@upload.id)
         format.html { redirect_to uploads_url, notice: "upload was successfully created." }
         format.json { render :show, status: :created, location: @upload }
       else

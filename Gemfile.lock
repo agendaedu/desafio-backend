@@ -137,8 +137,6 @@ GEM
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
-    rack-protection (2.2.2)
-      rack
     rack-proxy (0.7.2)
       rack
     rack-test (2.0.2)
@@ -216,11 +214,10 @@ GEM
       rubyzip (>= 1.2.2)
     shoulda-matchers (5.1.0)
       activesupport (>= 5.2.0)
-    sidekiq (6.0.7)
+    sidekiq (6.4.2)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      rack-protection (>= 2.0.0)
-      redis (>= 4.1.0)
+      redis (>= 4.2.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -278,12 +275,13 @@ DEPENDENCIES
   listen (~> 3.2)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
+  redis (~> 4.7)
   rspec-rails (~> 5.1)
   rspec-sidekiq
   sass-rails (>= 6)
   selenium-webdriver
   shoulda-matchers (~> 5.1)
-  sidekiq (~> 6.0.0)
+  sidekiq (~> 6.4.1)
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3 (~> 1.4)

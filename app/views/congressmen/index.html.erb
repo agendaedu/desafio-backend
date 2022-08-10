@@ -3,6 +3,7 @@
 
 <h3> Não há dados no banco de dados para serem carregados!</h3>
 <% else %>
+
 <h1>Congressmen</h1>
 
 <table class="table">
@@ -30,7 +31,7 @@
         <td><%= congressman.legislature %></td>
         <td><%= congressman.uf %></td>
         <td><%= congressman.party %></td>
-        <td><%= congressman.legislature_cod %></td>
+        <td><%= congressman.cod_legislature %></td>
         <td><%= link_to 'Show', congressman %></td>
       </tr>
     <% end %>
