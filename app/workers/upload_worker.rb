@@ -5,6 +5,10 @@ class UploadWorker
 
   def perform(id)
     @upload = Upload.find(id)
+    process_file()
+  end
+
+  def process_file()
     @upload.csv_file.open do |file|
       CSV.foreach(file) do |row|
 
