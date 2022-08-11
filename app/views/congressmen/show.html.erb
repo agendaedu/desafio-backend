@@ -1,0 +1,160 @@
+<body class="bg-light">
+
+  <div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="" alt="" width="72" height="72">
+      
+      <h2>Informações do Candidato</h2>
+      <p class="lead"></p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Principais Gastos</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0">Principais Gastos</h6>
+              <small class="text-muted">Aqui estão destacados os principais gastos do Deputado</small>
+            </div>
+          </li>
+           
+          <li class="list-group-item d-flex justify-content-between">
+            <span>Total (BRL)</span>
+            <strong>R<%= number_to_currency(@soma, precision: 2) %> </strong>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Endereço de cobrança</h4>
+        <form class="needs-validation" novalidate="">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="primeiroNome">Nome</label>
+              <input type="text" class="form-control" readonly="true" id="primeiroNome" value="<%= @congressman.name %>" required="">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="sobrenome">CPF</label>
+              <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.cpf %>" required="">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="primeiroNome">Cod de Registro</label>
+                <input type="text" class="form-control" readonly = "true" id="primeiroNome" value="<%= @congressman.cod_register %>" required="">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="sobrenome">Número de Carteira Parlamentar</label>
+                <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.cod_parliament %>" required="">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="sobrenome">Número da Legislatura</label>
+                <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.legislature %>" required="">
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="mb-3">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <label for="sobrenome">Partido</label>
+                <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.party %>" required="">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="sobrenome">UF</label>
+                <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.uf %>" required="">
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="sobrenome">Código da Legislatura</label>
+                <input type="text" class="form-control" readonly="true" id="sobrenome" value="<%= @congressman.cod_legislature %>" required="">
+              </div>
+            </div>
+          </div>
+
+        
+        </form>
+      </div>
+    </div>
+
+    <h1>Graphics</h1>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+  google.charts.load("current", {packages:['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ["Month", "Expense"],
+        <% @expenses.each do |expense| %>
+          <% expense.invoices.each do |invoice| %>
+            ["<%= invoice.issuance_date.strftime('%m/%Y') %>", <%= invoice.liquid_value.to_f %>],
+          <% end %>
+        <% end %>
+    ]);
+
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1]);
+
+    var options = {
+      title: "Expenses x Month",
+      width: '100%',
+      height: 400,
+      bar: {groupWidth: "95%"},
+      legend: { position: "none" },
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+    chart.draw(view, options);
+}
+</script>
+<div id="columnchart_values" style="width: 900px; height: 500px;"></div>
+
+    <h1>Expenses</h1>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Emission Date</th>
+            <th>Supplier</th>
+            <th>Liquid value</th>
+            <th>Document</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @expenses.each do |expense| %>
+            <tr>
+              <td>
+                <% expense.invoices.each do |invoice| %>
+                  <%= invoice.issuance_date.strftime("%d/%m/%Y") %>
+                <% end %>
+                
+              </td>
+              <td><%= expense.supplier_name %></td>
+              <td>
+                <% expense.invoices.each do |invoice|%>
+                  R<%= number_to_currency(invoice.liquid_value, precision: 2) %>
+                <% end %>
+              </td>
+              
+              <td>
+                <% expense.invoices.each do |invoice|%>
+                  <% invoice.documents.each do |document|%>
+                    <%= document.url_document %>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="py-5 text-center">
+        <%= paginate @expenses %>    
+      </div>

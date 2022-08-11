@@ -1,7 +1,7 @@
 require "sidekiq/web"
 Rails.application.routes.draw do
   devise_for :users
-  resources :congressmen, only: %i(index show)
+  resources :congressmen, only: %i(index show destroy)
   resources :uploads, only: %i(index new create destroy)
   root "congressmen#index"
   mount Sidekiq::Web => '/sidekiq'
