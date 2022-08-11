@@ -1,0 +1,25 @@
+pt-BR:
+  activerecord:
+    attributes:
+      user:
+        name: Nome
+        email: E-mail 
+        password: Senha
+        password_confirmation: Confirme sua senha
+        remember_me: lembrar
+      post:
+        title: Título
+        description: Descrição
+        owner: Dono
+        thumbnail: Imagem
+      congressman:
+        Name: Nome
+        Cpf: CPF
+        Cod_register: Registro do Deputado
+        Cod_parliament: Código do Partido
+        Legislature: Mandato
+        Uf: UF
+        Party: Partido
+        Cod_legislature: Código de Legislatura
+      upload:
+        csv_file: Arquivo CSV

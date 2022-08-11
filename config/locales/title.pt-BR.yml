@@ -1,0 +1,45 @@
+pt-BR:
+  Name: Nome
+  Cpf: CPF
+  Cod Register: Registro do Deputado
+  Cod Parliament: Código do Partido
+  Legislature: Mandato
+  Uf: UF
+  Party: Partido
+  Cod Legislature: Código de Legislatura
+  title: Título
+  description: Descrição
+  owner: Dono
+  new: Novo 
+  edit: Editar
+  show: Mostrar
+  Show: Mostrar
+  Destroy: Excluir 
+  delete: Deletar 
+  My Posts: Minhas Postagens
+  New Upload: Novo Upload
+  logout: Deslogar
+  thumbnail: Imagem
+  back: Voltar
+  Back: Voltar
+  at: às
+  says: disse
+  comment: Comentar
+  add comment: Adicionar Comentário
+  Sign up: Registrar
+  Forgot your password?: Esqueci a senha
+  characters minimum: caracteres no mínimo
+  you don't have permission to edit this: Você não tem permissão para editar isso
+  post was successfully updated!: O post foi atualizado com sucesso
+  post was successfully detroyed!: O post foi destruído com sucesso
+  post was successfully created!: O post foi criado com sucesso
+  post was successfully imported!: O post foi importado com sucesso
+  post was not successfully imported!: O post não foi importado com sucesso
+  upload was successfully updated!: O upload foi atualizado com sucesso
+  upload was successfully detroyed!: O upload foi destruído com sucesso
+  upload was successfully created!: O upload foi criado com sucesso
+  upload was successfully imported!: O upload foi importado com sucesso
+  upload was not successfully imported!: O upload não foi importado com sucesso
+  congressman was successfully detroyed!: O upload foi destruído com sucesso
+  remember_me: lembrar
+  send: Enviar

@@ -11,14 +11,14 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>Cod parliament</th>
-      <th>Legislature</th>
-      <th>Uf</th>
-      <th>Party</th>
-      <th>Legislature cod</th>
+      <th><%= t('Id')%></th>
+      <th><%= t('Name')%></th>
+      <th><%= t('Cpf')%></th>
+      <th><%= t('Cod Parliament')%></th>
+      <th><%= t('Legislature')%></th>
+      <th><%= t('Uf')%></th>
+      <th><%= t('Party')%></th>
+      <th><%= t('Cod Legislature')%></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -34,8 +34,8 @@
         <td><%= congressman.uf %></td>
         <td><%= congressman.party %></td>
         <td><%= congressman.cod_legislature %></td>
-        <td><%= link_to 'Show', congressman %></td>
-        <td><%= link_to 'Destroy', congressman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('Show'), congressman, class: 'btn btn-warning' %></td>
+        <td><%= link_to t('Destroy'), congressman, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
