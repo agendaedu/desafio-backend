@@ -24,7 +24,7 @@
            
           <li class="list-group-item d-flex justify-content-between">
             <span>Total (BRL)</span>
-            <strong>R<%= number_to_currency(@soma, precision: 2) %> </strong>
+            <strong><%= number_to_currency(@soma, precision: 2) %> </strong>
           </li>
         </ul>
       </div>
@@ -84,35 +84,7 @@
 
     <h1>Graphics</h1>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-  google.charts.load("current", {packages:['corechart']});
-  google.charts.setOnLoadCallback(drawChart);
-  function drawChart() {
-    var data = google.visualization.arrayToDataTable([
-      ["Month", "Expense"],
-        <% @expenses.each do |expense| %>
-          <% expense.invoices.each do |invoice| %>
-            ["<%= invoice.issuance_date.strftime('%m/%Y') %>", <%= invoice.liquid_value.to_f %>],
-          <% end %>
-        <% end %>
-    ]);
-
-    var view = new google.visualization.DataView(data);
-    view.setColumns([0, 1]);
-
-    var options = {
-      title: "Expenses x Month",
-      width: '100%',
-      height: 400,
-      bar: {groupWidth: "95%"},
-      legend: { position: "none" },
-    };
-    var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
-    chart.draw(view, options);
-}
-</script>
-<div id="columnchart_values" style="width: 900px; height: 500px;"></div>
+    <div id="columnchart_values" style="width: 900px; height: 500px;"></div>
 
     <h1>Expenses</h1>
 
@@ -139,7 +111,7 @@
               <td><%= expense.supplier_name %></td>
               <td>
                 <% expense.invoices.each do |invoice|%>
-                  R<%= number_to_currency(invoice.liquid_value, precision: 2) %>
+                  <%= number_to_currency(invoice.liquid_value, precision: 2) %>
                 <% end %>
               </td>
               
@@ -158,3 +130,34 @@
       <div class="py-5 text-center">
         <%= paginate @expenses %>    
       </div>
+
+
+
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ["Month", "Expense"],
+              <% @expenses.each do |expense| %>
+                <% expense.invoices.each do |invoice| %>
+                  ["<%= invoice.issuance_date.strftime('%m/%Y') %>", <%= invoice.liquid_value.to_f %>],
+                <% end %>
+              <% end %>
+          ]);
+      
+          var view = new google.visualization.DataView(data);
+          view.setColumns([0, 1]);
+      
+          var options = {
+            title: "Expenses x Month",
+            width: '100%',
+            height: 400,
+            bar: {groupWidth: "95%"},
+            legend: { position: "none" },
+          };
+          var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+          chart.draw(view, options);
+      }
+      </script>

@@ -12,7 +12,7 @@
       <tr>
         <td><%= upload.id %></td>
         <td><%= upload.csv_file.filename %></td>
-        <td><%= link_to 'Destroy', upload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', upload, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,7 +25,7 @@
 </div>
 
 <section class="py-3">
-  <%= link_to 'New Upload', new_upload_path %>
+  <%= link_to t('New Upload'), new_upload_path %>
 </section>
 
   

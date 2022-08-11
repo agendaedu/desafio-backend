@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <%= link_to t('Congressmen Manager'), root_path, 
+        <%= link_to t('menu.Congressmen Manager'), root_path, 
         class: "navbar-brand" %>     
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <% if current_user %>
                     <li class="nav-item">
-                        <%= link_to t('Congressmen'), congressmen_path, 
+                        <%= link_to t('menu.Congressmen'), congressmen_path, 
                         class: "dropdown-item mr-2" %>     
                     </li>
                     
