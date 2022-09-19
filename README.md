@@ -1,3 +1,24 @@
+Para inicializar os serviços que executarão em docker rode o seguinte comando:
+
+```bash
+sudo docker-compose up
+```
+
+Caso queira rodas em segundo plano utilize a flag `-d`
+
+Execute o seguinte comanda para ver se todas os serviços subiram corretamente:
+
+```bash
+sudo docker-compose ps
+```
+
+Caso não tenha criado o banco e rodado as migrações execute:
+
+```bash
+sudo docker-compose exec app bundle exec rake db:setup db:migrate --trace
+```
+
+
 # Ranking dos gastos dos Deputados
 
 Estamos muito felizes que você tenha chegado nessa etapa do nosso processo seletivo, para essa fase, desejamos que você resolva um desafio. Nosso desafio consiste em analisar alguns dados disponibilizados pelo Câmara dos Deputados relativos aos gastos dos parlamentares. A ideia é descobrir quem, do seu estado, está gastando mais e exibir de forma resumida esses principais gastos.
