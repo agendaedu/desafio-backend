@@ -1,0 +1,3 @@
+class DeputiesController < ApplicationController
+
+end

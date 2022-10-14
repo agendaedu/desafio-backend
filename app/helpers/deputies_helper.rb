@@ -1,0 +1,2 @@
+module DeputiesHelper
+end
