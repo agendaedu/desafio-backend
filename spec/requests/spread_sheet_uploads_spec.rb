@@ -1,9 +1,8 @@
 require "rails_helper"
+require 'support/rails_request_helper'
 
 RSpec.describe "SpreadSheetUploads", type: :request do
   describe "POST #create" do
-    # let(:file) { Rack::Test::UploadedFile.new(Rails.root.join("spec/support/planilha_teste.xlsx")) }
-
     let(:file) { fixture_file_upload(file_fixture('Ano-2021.csv')) }
     context 'when a file is uploaded' do
       before do
