@@ -4,7 +4,7 @@ class CreateFiscalDocuments < ActiveRecord::Migration[6.0]
       t.text :supplier
       t.text :cnpj
       t.text :cpf
-      t.integer :document_number
+      t.string :document_number
       t.text :document_type
       t.datetime :issue_date
       t.float :gloss_value

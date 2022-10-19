@@ -4,7 +4,10 @@ class SpreadSheetUploadsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
-    ProcessSpreadsheetWorker.perform_async(file_params[:file].path)
+    uploaded_file = SpreadsheetUploader.new
+    uploaded_file.store!(file_params[:file])
+
+    ProcessSpreadsheetWorker.perform_async(uploaded_file.file.file)
 
     render json: { message: "processing" }, status: :created
   end

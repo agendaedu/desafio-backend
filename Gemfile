@@ -7,6 +7,9 @@ ruby '2.6.5'
 gem 'active_model_serializers', '~> 0.10.13'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'jbuilder', '~> 2.7'
+gem 'carrierwave', '~> 2.0'
+gem 'pg'
+gem 'activerecord-import', '~> 0.15.0'
 gem 'mimemagic', github: 'mimemagicrb/mimemagic', ref: '01f92d86d15d85cfd0f20dabd025dcbd36a8a60f'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record

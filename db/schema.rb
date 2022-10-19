@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_13_193551) do
+ActiveRecord::Schema.define(version: 2022_10_16_041025) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "deputies", force: :cascade do |t|
     t.text "name"
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2022_10_13_193551) do
     t.text "supplier"
     t.text "cnpj"
     t.text "cpf"
-    t.integer "document_number"
+    t.string "document_number"
     t.text "document_type"
     t.datetime "issue_date"
     t.float "gloss_value"
@@ -46,9 +49,10 @@ ActiveRecord::Schema.define(version: 2022_10_13_193551) do
     t.integer "lot_number"
     t.integer "reinbursement_number"
     t.float "refund_amount"
-    t.integer "deputy_id", null: false
+    t.bigint "deputy_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "document_url"
     t.index ["deputy_id"], name: "index_fiscal_documents_on_deputy_id"
   end
 

@@ -17,5 +17,6 @@ FactoryBot.define do
     reinbursement_number { 1 }
     refund_amount { 1.5 }
     deputy { nil }
+    document_url { nil }
   end
 end
