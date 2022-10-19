@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :spread_sheet_uploads, only: %i[create]
+  resources :deputies, only: %i[index]
 end
