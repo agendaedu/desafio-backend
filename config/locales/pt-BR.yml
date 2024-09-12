@@ -1,0 +1,151 @@
+pt-BR:
+  errors:
+    messages:
+      already_confirmed: já foi confirmado
+      confirmation_period_expired: É necessário ser confirmado dentro do período %{period}, por favor requisite um novo usuário.
+      expired: expirou, por favor solicite uma nova
+      not_found: não encontrado
+      not_locked: não foi bloqueado
+      not_saved:
+        one: 'Não foi possível salvar %{resource}: 1 erro'
+        other: 'Não foi possível salvar %{resource}: %{count} erros.'
+  devise:
+    failure:
+      already_authenticated: Você já está autenticado.
+      inactive: A sua conta ainda não foi ativada.
+      invalid: "%{authentication_keys} ou senha inválidos."
+      last_attempt: Você tem mais uma única tentativa antes de sua conta ser bloqueada.
+      locked: A sua conta está bloqueada.
+      not_found_in_database: "%{authentication_keys} ou senha inválidos."
+      timeout: A sua sessão expirou, por favor, faça login novamente para continuar.
+      unauthenticated: Para continuar, faça login ou registre-se.
+      unconfirmed: Antes de continuar, confirme a sua conta.
+    registrations:
+      user:
+        signed_up: Bem vindo! Você realizou seu registro com sucesso.
+      destroyed: Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
+      edit:
+        are_you_sure: Você tem certeza?
+        cancel_my_account: Cancelar minha conta
+        currently_waiting_confirmation_for_email: 'No momento esperando por: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
+        title: Editar %{resource}
+        unhappy: Não está contente?
+        update: Atualizar
+        password: Senha
+        we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+        current_password: Senha Atual
+        edit: Editar
+        confirm_password: Confirmação de Senha
+        minimum_password_length: Mínimo de %{count} caracteres
+      new:
+        password: "Senha"
+        sign_up: Inscrever-se
+        signed_up: Bem vindo! Você realizou seu registro com sucesso.
+        signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
+        signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
+        signed_up_but_unconfirmed: Uma mensagem com um link de confirmação foi enviada para o seu e-mail. Por favor, acesse o link para ativar sua conta.
+        update_needs_confirmation: Sua conta foi atualizada com sucesso, mas nós precisamos verificar o novo endereço de email. Por favor, verifique seu e-mail e clique no link de confirmação para finalizar confirmando o seu novo e-mail.
+        updated: A sua conta foi atualizada com sucesso.
+        updated_but_not_signed_in: Sua conta foi atualizada com sucesso, uma vez que sua senha foi alterada será necessário realizar o login novamente.
+        minimum_password_length: Mínimo de %{count} caracteres
+        confimed_password: Confirmação de Senha
+        sign_up: Cadastrar
+    shared:
+      links:
+        sign_up: Cadastrar
+        sign_in: Login
+        forget_password: Esqueceu sua senha ?
+    sessions:
+      new:
+        remember_me: Me lembre
+        password: Senha
+        login: Entrar
+      user:
+        already_signed_out: Logout efetuado com sucesso.
+        sign_in: Login
+        signed_in: Login efetuado com sucesso.
+        signed_out: Logout efetuado com sucesso.
+    passwords:
+      edit:
+          change_my_password: Alterar minha senha
+          change_your_password: Alterar sua senha
+          confirm_new_password: Confirme sua nova senha
+          new_password: Nova senha
+      new:
+        forget_password: Esqueceu sua senha ?
+        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
+  format_invalid: não corresponde ao formato correto, por favor inclua um arquivo CSV.
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: é obrigatorio
+            email:
+              blank: é obrigatorio
+        file_ceap:
+          attributes:
+            avatar:
+              blank: é obrigatorio.
+            title:
+              blank: é obrigatorio.
+    attributes:
+      file_ceap:
+        title: Titulo
+        avatar: Arquivo
+        status:
+          processed: Processado
+          unprocessed: Não processado
+          in_process: Em processamento
+  shared:
+    header:
+     sign_up: Cadastrar
+     sign_in: Login 
+  pagy:
+    next: Próximo
+    prev: Anterior
+  file_ceaps:
+    create:
+      in_process: Em processamento
+    new:
+      csv_import: Importacao CSV
+    form:
+      save: Salvar
+      cancel: Cancelar
+    index:
+      new_import: Nova Importação
+    search:
+      search: Pesquisar
+      clear: Limpar
+      title: Titulo
+      processed: Processado
+    table:
+      title: Titulo
+      status: Status
+      file: Arquivo
+      download: Baixar
+      empty_file: Sem Arquivo
+  homes:
+    index:
+      import_file: Importação de Arquivos
+    show:
+      issuance_date: Data Emissão
+      supplier: Fornecedor
+      value: Valor Liquido
+      url_document: URL Documento
+      link: Link
+      deputy_not_fount: Parlamentar não encontrado
+    table:
+      name: Nome
+      registre: Cadastro
+      uf: UF
+      higher_expenses: Maior Despesa
+    search:
+      name: Nome Parlamentar
+      registre: Cadastro
+      cpf: CPF
+      ug: UF
+      search: Pesquisar
+      clear: Limpar

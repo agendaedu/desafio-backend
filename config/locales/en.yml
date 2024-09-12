@@ -1,33 +1,151 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      already_confirmed: already confirmed
+      confirmation_period_expired: Confirmation is required within the %{period} period, please request a new user.
+      expired: expired, please request a new one
+      not_found: not_found
+      not_locked: not locked
+      not_saved:
+        one: Could not save %{resource}
+        other: Could not save %{resource}
+  devise:
+    failure:
+      already_authenticated: Already authenticated.
+      inactive: Your account has not yet been activated.
+      invalid: "%{authentication_keys} or invalid password."
+      last_attempt: You have one more attempt before your account is locked.
+      locked: Your account is blocked.
+      not_found_in_database: "%{authentication_keys} ou senha inválidos."
+      timeout: Your session has expired, please log in again to continue.
+      unauthenticated: To continue, please login or register.
+      unconfirmed: Before proceeding, confirm your account.
+    registrations:
+      user:
+        signed_up: Welcome! You have successfully registered.
+      destroyed: Goodbye! Your account has been successfully cancelled. We hope to see you again soon.
+      edit:
+        are_you_sure: Are you sure?
+        cancel_my_account: Cancel my account
+        currently_waiting_confirmation_for_email: 'Currently waiting for: %{email}'
+        leave_blank_if_you_don_t_want_to_change_it: leave blank if you don't want to change it
+        title: Edit %{resource}
+        unhappy: Unhappy?
+        update: Update
+        password: Password
+        we_need_your_current_password_to_confirm_your_changes: We need your current password to confirm your changes
+        current_password: Current password
+        edit: Edit
+        confirm_password: Confirm password
+        minimum_password_length: minimum of %{count} caracteres
+      new:
+        password: Password
+        sign_up: Sign up
+        signed_up: Welcome! You have successfully registered.
+        signed_up_but_inactive: You have successfully signed up, but we are unable to authenticate you because your account has not yet been activated.
+        signed_up_but_locked: You have successfully registered. But we can't authenticate you because your account is locked.
+        signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email. Please go to the link to activate your account.
+        update_needs_confirmation: Your account has been successfully updated, but we need to verify your new email address. Please check your email and click on the confirmation link to finish confirming your new email.
+        updated: Your account has been successfully updated.
+        updated_but_not_signed_in: Your account has been successfully updated, once your password has been changed you will need to login again.
+        minimum_password_length: minimum of %{count} caracters
+        confimed_password: Confirm password
+        sign_up: Sign Up
+    shared:
+      links:
+        sign_up: Sign up
+        sign_in: Sign in
+        forget_password: Forget password ?
+    sessions:
+      new:
+        remember_me: Remember me
+        password: Password
+        login: Login
+      user:
+        already_signed_out: Already signed out.
+        sign_in: Login
+        signed_in: Login successful.
+        signed_out: Logout successful.
+    passwords:
+      edit:
+          change_my_password: Change my password
+          change_your_password: Change your password
+          confirm_new_password: Confirm new_password
+          new_password: Nova senha
+      new:
+        forget_password: Esqueceu sua senha ?
+        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
+  format_invalid: não corresponde ao formato correto, por favor inclua um arquivo CSV.
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            current_password:
+              blank: is must
+            email:
+              blank: is must
+        file_ceap:
+          attributes:
+            avatar:
+              blank: is must.
+            title:
+              blank: is must.
+    attributes:
+      file_ceap:
+        title: Title
+        avatar: File
+        status:
+          processed: Processed
+          unprocessed: Unprocessed
+          in_process: In Process
+  shared:
+    header:
+     sign_up: Sign up
+     sign_in: Sign in 
+  pagy:
+    next: Next
+    prev: Prev
+  file_ceaps:
+    create:
+      in_process: In Process
+    new:
+      csv_import: CSV Import
+    form:
+      save: Save
+      cancel: Cancel
+    index:
+      new_import: New Import
+    search:
+      search: Search
+      clear: Clear
+      title: Title
+      processed: Processed
+    table:
+      title: Title
+      status: Status
+      file: File
+      download: Download
+      empty_file: file empty
+  homes:
+    index:
+      import_file: Import File
+    show:
+      issuance_date: Issuance Date
+      supplier: Supplier
+      value: Net Value
+      url_document: URL Document
+      link: Link
+      deputy_not_fount: deputy not found
+    table:
+      name: Name
+      registre: Registre
+      uf: UF
+      higher_expenses: Higher Expenses
+    search:
+      name: Parliamentary Name
+      registre: Registre
+      cpf: CPF
+      ug: UF
+      search: Search
+      clear: Clear
