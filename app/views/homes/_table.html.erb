@@ -1,0 +1,20 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Cadastro</th>
+      <th scope="col">UF</th>
+      <th scope="col">Maior Despesa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @deputes.each do |deputy| %>
+      <tr>
+        <td><%= link_to deputy.tx_nome_parlamentar, home_path(deputy) %></td>
+        <td><%= deputy.id_cadastro %></td>
+        <td><%= deputy.sg_uf %></td>
+        <td>R$ <%= number_to_currency(deputy.maior_despesa, unit: "", separator: ",", delimiter: "", format: "%n %u") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

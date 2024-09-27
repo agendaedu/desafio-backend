@@ -1,0 +1,39 @@
+<section class="text-center container">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1><%= @depute.tx_nome_parlamentar %> - <%= @depute.sg_partido %></h1>
+        <img src="http://www.camara.leg.br/internet/deputado/bandep/<%= @depute.id_cadastro%>.jpg" width="200px" height="200">
+      </div>
+    </div>
+    <div class="col">
+      <%= area_chart @expenditures.group_by_day(:data_emissao).sum(:vlr_liquido), download: true %>
+    </div>
+    <p></p>
+    <div class="col">
+      <table class="table table-hover border border-2 rounded-3">
+        <thead>
+          <tr>
+            <th scope="col">Data Emissão</th>
+            <th scope="col">Fornecedor</th>
+            <th scope="col">Valor Liquido</th>
+            <th scope="col">URL Documento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @expenditures.order(:data_emissao).each do |expenditure| %>
+            <tr>
+              <td><%= expenditure.data_emissao %></td>
+              <td><%= expenditure.txt_fornecedor.upcase %></td>
+              <td>R$ <%= number_to_currency(expenditure.vlr_liquido, separator: ",",unit: "", delimiter: "", format: "%n %u") %></td>
+              <td><%= link_to "Link", expenditure.url_documento %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="pagination justify-content-center">
+      <%== pagy_bootstrap_nav(@pagy) %>
+    </div>
+  </div>
+</section>
