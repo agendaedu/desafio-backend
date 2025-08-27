@@ -8,8 +8,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <%= render "shared/header" %>
   <body>
-    <%= yield %>
+    <main>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <%= yield %>
+        </div>
+      </div>
+    </main>
   </body>
+  <%= render "shared/footer" %>
 </html>
