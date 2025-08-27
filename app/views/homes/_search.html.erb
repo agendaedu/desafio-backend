@@ -1,0 +1,28 @@
+<%= search_form_for @q, url: homes_path do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-3">
+      <%= f.label :tx_nome_parlamentar_cont, "Nome Parlamentar", class: "form-label" %>
+      <%= f.search_field :tx_nome_parlamentar_cont, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :id_cadastro_eq, "Cadastro", class: "form-label" %>
+      <%= f.search_field :id_cadastro_eq, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :cpf_eq, "CPF", class: "form-label" %>
+      <%= f.search_field :cpf_eq, class:"form-control" %>
+    </div>
+
+    <div class="col-sm-3">
+      <%= f.label :sg_uf_eq, "UF", class: "form-label" %>
+      <%= f.search_field :sg_uf_eq, class:"form-control" %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10">
+      <%= f.submit "Procurar", class: "btn btn-primary mb-3" %>
+    </div>
+  </div>
+<% end %>

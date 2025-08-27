@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Cadastro</th>
+      <th scope="col">UF</th>
+      <th scope="col">Maior Despesa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @deputes.each do |deputy| %>
+      <tr>
+        <th scope="row"><%= deputy.id %></th>
+        <td><%= deputy.tx_nome_parlamentar%></td>
+        <td><%= deputy.id_cadastro %></td>
+        <td><%= deputy.sg_uf %></td>
+        <td><%= deputy.maior_despesa %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
