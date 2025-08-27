@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="row">#</th>
+      <th scope="col"><%= t(".name") %></th>
+      <th scope="col"><%= t(".registre") %></th>
+      <th scope="col"><%= t(".uf") %></th>
+      <th scope="col"><%= t(".higher_expenses") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @deputes.each do |deputy| %>
+      <tr>
+        <td><img class="border border-3 rounded-circle" src="http://www.camara.leg.br/internet/deputado/bandep/<%= deputy.id_cadastro%>.jpg" width="30px" height="30px"></td>
+        <td><%= link_to deputy.tx_nome_parlamentar, home_path(deputy) %></td>
+        <td><%= deputy.id_cadastro %></td>
+        <td><%= deputy.sg_uf %></td>
+        <td>R$ <%= number_to_currency(deputy.maior_despesa, unit: "", separator: ",", delimiter: "", format: "%n %u") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
