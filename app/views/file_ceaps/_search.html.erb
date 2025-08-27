@@ -1,0 +1,18 @@
+<%= search_form_for @q do |f| %>
+  <div class="mb-3 row">
+    <div class="col-sm-3">
+      <%= f.label :title_cont, "Titulo", class: "form-label" %>
+      <%= f.search_field :title_cont, class:"form-control" %>
+    </div>
+    <div class="col-sm-3">
+      <%= f.label :processed_eq, "Processado", class: "form-label" %>
+      <%= f.select :processed_eq, [["Sim", 1], ["Não", 0]], {}, class: "form-control" %>
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <div class="col-sm-10">
+      <%= f.submit "Procurar", class: "btn btn-primary mb-3" %>
+      <%= link_to "Limpar", file_ceaps_url, class: "btn btn-primary mb-3" %>
+    </div>
+  </div>
+<% end %>
